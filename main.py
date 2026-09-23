@@ -1,17 +1,17 @@
 from storage import add_expenses, show_expenses
+import argparse
 
-while True: # The loop which takes input and decides the choices
-    choice = input("Enter Your Choice (add, list or quit): ").lower()
+parser = argparse.ArgumentParser()
+parser.add_argument("command", choices = ["add", "show"], help = "what to do")
+parser.add_argument('-c', '--category', help = "Category of expenditre")
+parser.add_argument('-a', '--amount', type = float, help = "Amount spent")
+parser.add_argument('-li', '--listcat', default = "all", help = "category specific expenditure to list")
+args = parser.parse_args()
 
-    if choice == "add":
-        amount = float(input("How much is the Amount? "))
-        category = input("What category of expense? ").lower()
-        add_expenses(category, amount)
+if args.command == "add":
+    add_expenses(args.category, args.amount)
 
-    elif choice == "list":
-        user_input = input("which Category to display or \"all\": ").lower()
-        show_expenses(user_input)
+else:
+    show_expenses(args.listcat)
 
-    elif choice in ["quit", "q"]:
-        break
 print("Exiting Safely")
