@@ -9,6 +9,8 @@ parser.add_argument('-li', '--listcat', default = "all", help = "category specif
 args = parser.parse_args()
 
 if args.command == "add":
+    if not args.category or not args.amount:
+        parser.error("\"add\" requires both --category and --amount both to be valid")
     add_expenses(args.category, args.amount)
 
 else:
