@@ -1,4 +1,9 @@
 ## Expense Tracker!
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python](https://img.shields.io/badge/python-3.x-blue.svg)
+![Argparse](https://img.shields.io/badge/stdlib-argparse-red)
+
 track your expenses easily
 > i built this project because i can't track my expenses
 
@@ -24,7 +29,8 @@ Expense-Tracker/
 
 ### Usage
 + arguments used:
-```bashcommand          add | show        (choices, positional)
+```bash
+command          add | show        (choices, positional)
 -c/--category    expense category
 -a/--amount      amount spent  (must be a number)
 -li/--listcat    category to list, default "all"
